@@ -1,0 +1,174 @@
+/* Background with soft gradient */
+body {
+    background: linear-gradient(to right, #b2f7c7, #78d5a7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Order container */
+#container-orderID {
+    align-items: center;
+    margin: auto;
+    margin-top: 50px;
+    max-width: 400px;
+}
+
+/* Glassmorphic container */
+.container {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    margin: auto;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Headings */
+h2 {
+    margin-bottom: 15px;
+    color: #006400;
+    font-weight: 700;
+}
+
+h3 {
+    color: #ff4a17;
+    font-weight: 600;
+}
+
+/* Input fields */
+input {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.5);
+    color: #333;
+    outline: none;
+    transition: 0.3s;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Button styling */
+button {
+    background: #006400;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #009a00;
+    transform: scale(1.05);
+}
+
+/* Order details with glassmorphism */
+.order-details {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    padding: 15px;
+    border-radius: 10px;
+    margin-left: 7px;
+    margin-top: 20px;
+    text-align: left;
+    color: #333;
+    width: 100%;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tracking section */
+.tracking-list {
+    position: relative;
+}
+
+/* Tracking item with soft glassmorphism effect */
+.tracking-item {
+    border-left: 4px solid #00b74a;
+    position: relative;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    margin-left: 3rem;
+}
+
+/* Tracking item icon */
+.tracking-item .tracking-icon {
+    position: absolute;
+    left: -1.2rem;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tracking-item .tracking-icon i {
+    color: #00b74a;
+}
+
+#courier-details {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #333;
+    margin-top: 5px;
+}
+
+/* Inactive tracking */
+.tracking-item.inactive {
+    border-left: 4px solid #d6d6d6;
+}
+
+.tracking-item.inactive .tracking-icon i {
+    color: #d6d6d6;
+}
+
+/* Tracking content */
+.tracking-content {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.tracking-content span {
+    display: block;
+    color: #5f5a5a;
+    font-size: 0.9rem;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+    #container-orderID {
+        margin-top: 15px;
+        max-width: 350px;
+    }
+
+    .container {
+        max-width: 350px;
+        padding: 20px;
+    }
+
+    .order-details {
+        margin-left: 0;
+        width: 99%;
+        margin: auto;
+        margin-top: 15px;
+    }
+}
