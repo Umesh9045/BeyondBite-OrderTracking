@@ -1,19 +1,28 @@
 /* Background with soft gradient */
 body {
     background: linear-gradient(to right, #b2f7c7, #78d5a7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
     font-family: 'Poppins', sans-serif;
+        background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Order container */
 #container-orderID {
     align-items: center;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 100px;
     max-width: 400px;
 }
 
@@ -28,6 +37,8 @@ body {
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
     width: 800px;
     margin: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -156,18 +167,18 @@ button:hover {
 /* Mobile responsive adjustments */
 @media (max-width: 600px) {
     #container-orderID {
-        margin-top: 15px;
+        /* margin-top: 150px; */
         max-width: 350px;
     }
 
     .container {
-        max-width: 350px;
+        max-width: 99%;
         padding: 20px;
     }
 
     .order-details {
         margin-left: 0;
-        width: 99%;
+        max-width: 96%;
         margin: auto;
         margin-top: 15px;
     }
