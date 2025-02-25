@@ -1,6 +1,8 @@
 /* Background with soft gradient */
 body {
-    background: linear-gradient(to right, #b2f7c7, #78d5a7);
+    /* background: linear-gradient(to right, #84d49c, #78d5a7); */
+    background: linear-gradient(to right, #84d49c, #9ae9c2);
+
     font-family: 'Poppins', sans-serif;
     background-size: 400% 400%;
     animation: gradientAnimation 5s ease infinite;
@@ -149,6 +151,7 @@ button:hover {
 .tracking-content {
     font-weight: 600;
     font-size: 1rem;
+    margin-left: 1rem;
 }
 
 .tracking-content span {
