@@ -114,7 +114,6 @@ button:hover {
 
 /* Tracking item with soft glassmorphism effect */
 .tracking-item {
-    border-left: 4px solid #00b74a;
     position: relative;
     padding: 1rem 2rem;
     /* font-size: 1rem; */
@@ -144,15 +143,6 @@ button:hover {
     font-style: italic;
     color: #333;
     margin-bottom: 0.4rem;
-}
-
-/* Inactive tracking */
-.tracking-item.inactive {
-    border-left: 4px solid #d6d6d6;
-}
-
-.tracking-item.inactive .tracking-icon i {
-    color: #d6d6d6;
 }
 
 /* Tracking content */
@@ -189,8 +179,34 @@ button:hover {
 
 .smooth-fade-in {
     opacity: 0;
-    /* transform: translateY( 4px); */
     animation: smoothFadeInUp 1s ease-in-out forwards;
+}
+
+/* Initially hide both tracking-content and tracking-icon */
+.tracking-content,
+.tracking-icon {
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Keep inactive statuses hidden until animation completes */
+.tracking-item.inactive .tracking-content,
+.tracking-item.inactive .tracking-icon {
+    opacity: 0;
+}
+
+.tracking-item{
+    border-left: 4px solid #00b74a;
+}
+
+/* Inactive tracking */
+.tracking-item.inactive {
+    border-left: 4px solid #d6d6d6;
+}
+
+.tracking-item.inactive .tracking-icon i {
+    color: #d6d6d6;
 }
 
 @keyframes smoothFadeInUp {
@@ -198,12 +214,10 @@ button:hover {
         opacity: 0;
         transform: translateY(0);
     }
-
     50% {
         opacity: 0.5;
         transform: translateY(2px);
     }
-
     100% {
         opacity: 1;
         transform: translateY(4px);

@@ -94,14 +94,28 @@ function trackOrder() {
         setTimeout(() => {
             let element = document.getElementById("status-" + stage.toLowerCase());
             let dateElement = document.getElementById("date-" + stage.toLowerCase());
+            let iconElement = element.querySelector(".tracking-icon");
 
-            if (element && dateElement) {
-                if (statusStages.indexOf(stage) <= statusStages.indexOf(data["Status"])) {
-                    element.classList.remove("inactive");
-                    element.classList.add("smooth-fade-in"); // Updated class for smooth animation
-                    dateElement.innerText = data["Dates"][stage];
-                }
+            if (element && dateElement && iconElement) {
+                element.classList.add("smooth-fade-in");
+
+                setTimeout(() => {
+                    if (statusStages.indexOf(stage) <= statusStages.indexOf(data["Status"])) {
+                        // Active status - Full opacity after animation
+                        element.classList.remove("inactive");
+                        element.querySelector(".tracking-content").style.opacity = "1";
+                        element.querySelector(".tracking-content").style.transform = "translateY(0)";
+                        iconElement.style.opacity = "1";
+                        iconElement.style.transform = "translateY(0)";
+                        dateElement.innerText = data["Dates"][stage];
+                    } else {
+                        // Inactive status - Slightly visible after animation
+                        element.querySelector(".tracking-content").style.opacity = "0.5";
+                        iconElement.style.opacity = "0.5";
+                    }
+                }, 1000); // Wait for animation to complete before showing content & icon
             }
         }, index * 700);
     });
+
 }
