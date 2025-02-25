@@ -39,7 +39,7 @@ function trackOrder() {
         "BB003": {
             "Customer Name": "Priya Shah",
             "Ordered Items": "Mix Fruit Raisins",
-            "Status": "Prepared",
+            "Status": "Delivered",
             "Delivery Postcode": "110001",
             "Payment Mode": "Prepaid",
             "Courier": {
@@ -99,6 +99,14 @@ function trackOrder() {
             if (element && dateElement && iconElement) {
                 element.classList.add("smooth-fade-in");
 
+                // if (stage === "Delivered") {
+                //     if (data["Status"] === "Delivered") {
+                //         dateElement.innerText = data["Dates"][stage]; // Show actual delivery date
+                //     } else {
+                //         dateElement.innerText = `Estimated: ${data["Dates"][stage]}`; // Show estimated delivery date
+                //     }
+                // } 
+
                 setTimeout(() => {
                     if (statusStages.indexOf(stage) <= statusStages.indexOf(data["Status"])) {
                         // Active status - Full opacity after animation
@@ -107,7 +115,16 @@ function trackOrder() {
                         element.querySelector(".tracking-content").style.transform = "translateY(0)";
                         iconElement.style.opacity = "1";
                         iconElement.style.transform = "translateY(0)";
+
                         dateElement.innerText = data["Dates"][stage];
+
+                        // if (stage === "Delivered" && data["Status"] === "Delivered") {
+                        //     dateElement.innerHTML = `  <div class="tracking-icon"><i class="bi bi-house-check-fill"></i></div>
+                        //     <div class="tracking-content">Delivered on ${data["Dates"][stage]} </div>`;
+                        //     dateElement.style.display = "none"; // Hide the span if delivered
+                        // } 
+
+                     
                     } else {
                         // Inactive status - Slightly visible after animation
                         element.querySelector(".tracking-content").style.opacity = "0.5";
@@ -117,5 +134,6 @@ function trackOrder() {
             }
         }, index * 700);
     });
+
 
 }

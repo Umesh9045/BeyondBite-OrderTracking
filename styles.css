@@ -193,12 +193,12 @@ button:hover {
 
     50% {
         opacity: 0.5;
-        transform: translateY(2px);
+        transform: translateY(0.5px);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(4px);
+        transform: translateY(1px);
     }
 }
 
