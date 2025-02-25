@@ -35,6 +35,22 @@ function trackOrder() {
                 "Shipped": "20 Feb 2025, 04:00 PM",
                 "Delivered": "21 Feb 2025, 09:00 AM"
             }
+        },
+        "BB003": {
+            "Customer Name": "Priya Shah",
+            "Ordered Items": "Mix Fruit Raisins",
+            "Status": "Prepared",
+            "Delivery Postcode": "110001",
+            "Payment Mode": "Prepaid",
+            "Courier": {
+                "Agency": "BeyondBite"
+            },
+            "Dates": {
+                "Ordered": "18 Feb 2025, 11:00 AM",
+                "Prepared": "19 Feb 2025, 01:30 PM",
+                "Shipped": "20 Feb 2025, 04:00 PM",
+                "Delivered": "21 Feb 2025, 09:00 AM"
+            }
         }
     };
 
@@ -84,8 +100,8 @@ function trackOrder() {
                     element.classList.remove("inactive");
                     element.classList.add("smooth-fade-in"); // Updated class for smooth animation
                     dateElement.innerText = data["Dates"][stage];
-                } 
+                }
             }
-        }, index * 500); // Reduced delay for smoother effect
+        }, index * 700);
     });
 }

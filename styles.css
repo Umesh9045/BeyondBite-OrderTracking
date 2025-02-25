@@ -117,7 +117,7 @@ button:hover {
     border-left: 4px solid #00b74a;
     position: relative;
     padding: 1rem 2rem;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     margin-left: 2rem;
 }
 
@@ -189,7 +189,7 @@ button:hover {
 
 .smooth-fade-in {
     opacity: 0;
-    transform: translateY( 0.3rem);
+    /* transform: translateY( 4px); */
     animation: smoothFadeInUp 1s ease-in-out forwards;
 }
 
@@ -201,11 +201,11 @@ button:hover {
 
     50% {
         opacity: 0.5;
-        transform: translateY( 0.3rem);
+        transform: translateY(2px);
     }
 
     100% {
         opacity: 1;
-        transform: translateY( 0.6rem);
+        transform: translateY(4px);
     }
 }
