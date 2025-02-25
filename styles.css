@@ -3,7 +3,7 @@ body {
     background: linear-gradient(to right, #b2f7c7, #78d5a7);
     font-family: 'Poppins', sans-serif;
     background-size: 400% 400%;
-    animation: gradientAnimation 8s ease infinite;
+    animation: gradientAnimation 5s ease infinite;
 }
 
 @keyframes gradientAnimation {
@@ -116,19 +116,19 @@ button:hover {
 .tracking-item {
     border-left: 4px solid #00b74a;
     position: relative;
-    padding: 1rem 1.5rem;
+    padding: 1rem 2rem;
     font-size: 1rem;
-    margin-left: 3rem;
+    margin-left: 2rem;
 }
 
 /* Tracking item icon */
 .tracking-item .tracking-icon {
     position: absolute;
     left: -1.2rem;
-    width: 2rem;
-    height: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
     text-align: center;
-    line-height: 2rem;
+    line-height: 2.3rem;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.7);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
@@ -136,13 +136,14 @@ button:hover {
 
 .tracking-item .tracking-icon i {
     color: #00b74a;
+    font-size: 1.2rem;
 }
 
 #courier-details {
     font-size: 0.8rem;
     font-style: italic;
     color: #333;
-    margin-top: 5px;
+    margin-bottom: 0.4rem;
 }
 
 /* Inactive tracking */
@@ -183,5 +184,28 @@ button:hover {
         max-width: 96%;
         margin: auto;
         margin-top: 15px;
+    }
+}
+
+.smooth-fade-in {
+    opacity: 0;
+    transform: translateY( 0.3rem);
+    animation: smoothFadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes smoothFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateY( 0.3rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY( 0.6rem);
     }
 }

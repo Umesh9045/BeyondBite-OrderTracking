@@ -59,22 +59,6 @@ function trackOrder() {
     document.getElementById("orderedItems").innerText = data["Ordered Items"];
     document.getElementById("deliveryPostcode").innerText = data["Delivery Postcode"];
 
-    // Update tracking status
-    let statusStages = ["Ordered", "Prepared", "Shipped", "Delivered"];
-    statusStages.forEach((stage) => {
-        let element = document.getElementById("status-" + stage.toLowerCase());
-        let dateElement = document.getElementById("date-" + stage.toLowerCase());
-
-        if (element && dateElement) {
-            if (statusStages.indexOf(stage) <= statusStages.indexOf(data["Status"])) {
-                element.classList.remove("inactive");
-                dateElement.innerText = data["Dates"][stage];
-            } else {
-                element.classList.add("inactive");
-            }
-        }
-    });
-
     // Update courier details
     let courierDetails = document.getElementById("courier-details");
     if (data["Status"] === "Shipped") {
@@ -82,9 +66,26 @@ function trackOrder() {
             courierDetails.innerHTML = `Fulfilled by BeyondBite`;
         } else {
             courierDetails.innerHTML = `
-                Shipped by ${data["Courier"]["Agency"]}
-                <a href="${data["Courier"]["TrackingURL"]}" target="_blank" style="color: blue;">&#8599;</a>
-                <div>AWD ID: ${data["Courier"]["AWD_ID"]}</div>`;
+                 Shipped by ${data["Courier"]["Agency"]}
+                 <a href="${data["Courier"]["TrackingURL"]}" target="_blank" style="color: blue;">&#8599;</a>
+                 <div>AWD ID: ${data["Courier"]["AWD_ID"]}</div>`;
         }
     }
+
+    // Update tracking status
+    let statusStages = ["Ordered", "Prepared", "Shipped", "Delivered"];
+    statusStages.forEach((stage, index) => {
+        setTimeout(() => {
+            let element = document.getElementById("status-" + stage.toLowerCase());
+            let dateElement = document.getElementById("date-" + stage.toLowerCase());
+
+            if (element && dateElement) {
+                if (statusStages.indexOf(stage) <= statusStages.indexOf(data["Status"])) {
+                    element.classList.remove("inactive");
+                    element.classList.add("smooth-fade-in"); // Updated class for smooth animation
+                    dateElement.innerText = data["Dates"][stage];
+                } 
+            }
+        }, index * 500); // Reduced delay for smoother effect
+    });
 }
