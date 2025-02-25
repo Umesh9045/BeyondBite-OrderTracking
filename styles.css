@@ -118,6 +118,7 @@ button:hover {
     padding: 1rem 2rem;
     /* font-size: 1rem; */
     margin-left: 2rem;
+    opacity: 0;
 }
 
 /* Tracking item icon */
@@ -142,7 +143,6 @@ button:hover {
     font-size: 0.8rem;
     font-style: italic;
     color: #333;
-    margin-bottom: 0.4rem;
 }
 
 /* Tracking content */
@@ -155,26 +155,6 @@ button:hover {
     display: block;
     color: #5f5a5a;
     font-size: 0.9rem;
-}
-
-/* Mobile responsive adjustments */
-@media (max-width: 600px) {
-    #container-orderID {
-        /* margin-top: 150px; */
-        max-width: 350px;
-    }
-
-    .container {
-        max-width: 99%;
-        padding: 20px;
-    }
-
-    .order-details {
-        margin-left: 0;
-        max-width: 96%;
-        margin: auto;
-        margin-top: 15px;
-    }
 }
 
 .smooth-fade-in {
@@ -190,13 +170,7 @@ button:hover {
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Keep inactive statuses hidden until animation completes */
-.tracking-item.inactive .tracking-content,
-.tracking-item.inactive .tracking-icon {
-    opacity: 0;
-}
-
-.tracking-item{
+.tracking-item {
     border-left: 4px solid #00b74a;
 }
 
@@ -214,12 +188,35 @@ button:hover {
         opacity: 0;
         transform: translateY(0);
     }
+
     50% {
         opacity: 0.5;
         transform: translateY(2px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(4px);
+    }
+}
+
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+    #container-orderID {
+        margin-top: 150px;
+        max-width: 350px;
+    }
+
+    .container {
+        max-width: 99%;
+        padding: 20px;
+    }
+
+    .order-details {
+        margin-left: 0;
+        max-width: 96%;
+        margin: auto;
+        margin-top: 15px;
     }
 }
