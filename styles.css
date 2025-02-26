@@ -5,8 +5,8 @@ body {
     background-color: #9ae9c2;
     color: #78513b;
     font-family: 'Poppins', sans-serif;
-    /* background-size: 400% 400%;
-    animation: gradientAnimation 5s ease infinite; */
+    /* background-size: 400% 400%; */
+    /* animation: gradientAnimation 5s ease infinite; */
 }
 
 @keyframes gradientAnimation {
@@ -28,19 +28,19 @@ body {
     align-items: center;
     margin: auto;
     margin-top: 100px;
-    max-width: 450px;
+    max-width: 400px;
 }
 
 /* Glassmorphic container */
 .container {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 15px;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
-    width: 850px;
+    width: 800px;
     margin: auto;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-bottom: 3%;
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
@@ -206,8 +206,7 @@ button:hover {
 /* Mobile responsive adjustments */
 @media (max-width: 600px) {
     #container-orderID {
-        margin-top: 150px;
-        max-width: 350px;
+        max-width: 290px;
     }
 
     .container {
