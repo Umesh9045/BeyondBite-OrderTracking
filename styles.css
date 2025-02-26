@@ -49,7 +49,7 @@ body {
 h2 {
     margin-bottom: 15px;
     color: #006400;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 h3 {
@@ -204,7 +204,7 @@ button:hover {
 
 
 /* Mobile responsive adjustments */
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     #container-orderID {
         max-width: 290px;
     }
@@ -219,5 +219,72 @@ button:hover {
         max-width: 96%;
         margin: auto;
         margin-top: 15px;
+    }
+} */
+
+@media (max-width: 376px) {
+    #container-orderID {
+        max-width: 290px !important;
+    }
+}
+
+@media (max-width: 424px) {
+    #container-orderID {
+        max-width: 310px !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+    #container-orderID {
+        margin-top: 100px !important;
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .container {
+        max-width: 97%;
+        margin: auto;
+        margin-top: 2%;
+        margin-bottom: 1%;
+    }
+
+    .order-details {
+        margin-left: 10px !important;
+        max-width: 95%;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 670px) {
+    .order-details {
+        margin-left: 0px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-details {
+        display: flex;
+        flex-direction: column;
+        /* margin-right: 10px; */
+    }
+
+    .tracking-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .tracking-item {
+        width: 90%;
     }
 }
