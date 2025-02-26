@@ -1,5 +1,6 @@
 function trackOrder() {
     let orderId = document.getElementById("order_id").value.trim();
+    var errorMessage = document.getElementById("error-message");
 
     let sampleData = {
         "BB001": {
@@ -53,11 +54,20 @@ function trackOrder() {
             }
         }
     };
-
-    if (!sampleData[orderId]) {
-        alert("Order not found!");
+    if (orderId === "" || orderId === null) {
+        errorMessage.textContent = "Please enter a valid Order ID.";
+        errorMessage.style.display = "block";
         return;
     }
+
+    if (!sampleData[orderId]) {
+        errorMessage.textContent = "Order not found!";
+        errorMessage.style.display = "block";
+        return;
+    }
+
+    // Hide error message if input is valid
+    errorMessage.style.display = "none";
 
     let data = sampleData[orderId];
 
@@ -124,7 +134,7 @@ function trackOrder() {
                         //     dateElement.style.display = "none"; // Hide the span if delivered
                         // } 
 
-                     
+
                     } else {
                         // Inactive status - Slightly visible after animation
                         element.querySelector(".tracking-content").style.opacity = "0.5";

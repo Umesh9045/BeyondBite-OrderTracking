@@ -64,7 +64,7 @@ body {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -2px; /* Adjust underline position */
+    bottom: -2px;
     width: 0;
     height: 2px;
     background-color: #006400;
@@ -287,18 +287,20 @@ button:hover {
     .order-details {
         margin-left: 10px !important;
         max-width: 95%;
-        margin: 15px auto; /* Center-align */
+        margin: 15px auto;
+        /* Center-align */
     }
 }
 
 /* Medium mobile screens (up to 670px) */
 @media (max-width: 670px) {
-    .order-details{
+    .order-details {
         padding: 25px;
     }
 
     .row {
-        flex-direction: column; /* Stack vertically */
+        flex-direction: column;
+        /* Stack vertically */
     }
 
     .col {
@@ -306,7 +308,8 @@ button:hover {
     }
 
     .order-details {
-        margin-left: 0px; /* Ensure full-width alignment */
+        margin-left: 0px;
+        /* Ensure full-width alignment */
     }
 }
 
@@ -317,7 +320,8 @@ button:hover {
         flex-direction: column;
         /* align-items: center;  */
         /* text-align: center; */
-        gap: 10px; /* Space between elements */
+        gap: 10px;
+        /* Space between elements */
     }
 
     .tracking-list {
@@ -329,6 +333,6 @@ button:hover {
 
     .tracking-item {
         width: 90%;
-       
+
     }
 }
