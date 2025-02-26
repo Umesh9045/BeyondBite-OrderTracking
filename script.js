@@ -87,7 +87,7 @@ function trackOrder() {
 
     // Update courier details
     let courierDetails = document.getElementById("courier-details");
-    if (data["Status"] === "Shipped") {
+    if (data["Status"] === "Shipped" || data["Status"] === "Delivered") {
         if (data["Courier"]["Agency"] === "BeyondBite") {
             courierDetails.innerHTML = `Fulfilled by BeyondBite`;
         } else {
