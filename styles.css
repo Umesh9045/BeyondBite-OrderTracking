@@ -252,29 +252,37 @@ button:hover {
     .order-details {
         margin-left: 10px !important;
         max-width: 95%;
-        margin-top: 15px;
+        margin: 15px auto; /* Center-align */
     }
 }
 
+/* Medium mobile screens (up to 670px) */
 @media (max-width: 670px) {
-    .order-details {
-        margin-left: 0px;
+    .order-details{
+        padding: 25px;
     }
 
     .row {
-        flex-direction: column;
+        flex-direction: column; /* Stack vertically */
     }
 
     .col {
         width: 100%;
     }
+
+    .order-details {
+        margin-left: 0px; /* Ensure full-width alignment */
+    }
 }
 
+/* Small mobile screens (up to 480px) */
 @media (max-width: 480px) {
     .order-details {
         display: flex;
         flex-direction: column;
-        /* margin-right: 10px; */
+        /* align-items: center;  */
+        /* text-align: center; */
+        gap: 10px; /* Space between elements */
     }
 
     .tracking-list {
@@ -286,5 +294,6 @@ button:hover {
 
     .tracking-item {
         width: 90%;
+       
     }
 }
