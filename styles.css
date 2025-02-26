@@ -41,9 +41,44 @@ body {
     width: 800px;
     margin: auto;
     margin-top: 2%;
-    margin-bottom: 3%;
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
+
+.beyondbiteURL {
+    margin-top: 16px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+.beyondbiteURL a {
+    position: relative;
+    text-decoration: none;
+    color: #5f5a5a;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Underline effect on hover */
+.beyondbiteURL a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust underline position */
+    width: 0;
+    height: 2px;
+    background-color: #006400;
+    transition: width 0.3s ease-in-out;
+}
+
+.beyondbiteURL a:hover {
+    color: #006400;
+}
+
+.beyondbiteURL a:hover::after {
+    width: 100%;
+}
+
 
 /* Headings */
 h2 {
