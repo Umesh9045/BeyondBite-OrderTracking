@@ -89,8 +89,8 @@ function trackOrder() {
 
     let data = sampleData[orderId];
 
-     // Update URL with the Order ID
-     window.history.pushState({}, '', `?orderid=${orderId}`);
+    // Update URL with the Order ID
+    window.history.pushState({}, '', `?orderid=${orderId}`);
 
     // Show order details section & hide input section
     document.getElementById("orderInfo").style.display = "block";
@@ -122,6 +122,14 @@ function trackOrder() {
     // Update tracking status
     let statusStages = ["Ordered", "Prepared", "Shipped", "Delivered"];
     statusStages.forEach((stage, index) => {
+
+        if (data["Status"] === "Delivered") {
+            dateElement.innerText = data["Dates"][stage]; // Show actual delivery date
+        } else {
+            // document.getElementById("estimatedDelivery").style.display = "block";
+            document.getElementById("estimatedDeliveryDate").innerText = ` ${data["Dates"]["Delivered"]}`;
+        }
+
         setTimeout(() => {
             let element = document.getElementById("status-" + stage.toLowerCase());
             let dateElement = document.getElementById("date-" + stage.toLowerCase());
@@ -130,13 +138,7 @@ function trackOrder() {
             if (element && dateElement && iconElement) {
                 element.classList.add("smooth-fade-in");
 
-                // if (stage === "Delivered") {
-                //     if (data["Status"] === "Delivered") {
-                //         dateElement.innerText = data["Dates"][stage]; // Show actual delivery date
-                //     } else {
-                //         dateElement.innerText = `Estimated: ${data["Dates"][stage]}`; // Show estimated delivery date
-                //     }
-                // } 
+
 
                 setTimeout(() => {
                     if (statusStages.indexOf(stage) <= statusStages.indexOf(data["Status"])) {
@@ -149,19 +151,12 @@ function trackOrder() {
 
                         dateElement.innerText = data["Dates"][stage];
 
-                        // if (stage === "Delivered" && data["Status"] === "Delivered") {
-                        //     dateElement.innerHTML = `  <div class="tracking-icon"><i class="bi bi-house-check-fill"></i></div>
-                        //     <div class="tracking-content">Delivered on ${data["Dates"][stage]} </div>`;
-                        //     dateElement.style.display = "none"; // Hide the span if delivered
-                        // } 
-
-
                     } else {
                         // Inactive status - Slightly visible after animation
                         element.querySelector(".tracking-content").style.opacity = "0.5";
                         iconElement.style.opacity = "0.5";
                     }
-                }, 1000); // Wait for animation to complete before showing content & icon
+                }, 1000);
             }
         }, index * 700);
     });

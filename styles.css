@@ -134,6 +134,7 @@ button:hover {
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(12px);
     padding: 15px;
+    padding-bottom: 5px;
     border-radius: 10px;
     margin-left: 7px;
     margin-top: 20px;
@@ -141,11 +142,17 @@ button:hover {
     color: #333;
     width: 100%;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    align-items: baseline;
+}
+
+#estimatedDelivery{
+    display: none;
 }
 
 /* Tracking section */
 .tracking-list {
     position: relative;
+    margin-bottom: 15px;
 }
 
 /* Tracking item with soft glassmorphism effect */
