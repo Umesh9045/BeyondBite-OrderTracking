@@ -6,7 +6,7 @@ function trackOrder() {
         "BB001": {
             "Customer Name": "Rajesh Kumar",
             "Ordered Items": "Almond Kesar Kulfi, Nutri Balls",
-            "Status": "Shipped",
+            "Status": "Prepared",
             "Delivery Postcode": "560001",
             "Payment Mode": "COD",
             "Courier": {
@@ -24,7 +24,25 @@ function trackOrder() {
         "BB002": {
             "Customer Name": "Priya Shah",
             "Ordered Items": "Mix Fruit Raisins",
-            "Status": "Delivered",
+            "Status": "Shipped",
+            "Delivery Postcode": "110001",
+            "Payment Mode": "Prepaid",
+            "Courier": {
+                "Agency": "DTDC",
+                "AWD_ID": "DTDC123456",
+                "TrackingURL": "https://www.dtdc.in/tracking.asp?awb=DTDC123456"
+            },
+            "Dates": {
+                "Ordered": "18 Feb 2025, 11:00 AM",
+                "Prepared": "19 Feb 2025, 01:30 PM",
+                "Shipped": "20 Feb 2025, 04:00 PM",
+                "Delivered": "21 Feb 2025, 09:00 AM"
+            }
+        },
+        "BB003": {
+            "Customer Name": "Priya Shah",
+            "Ordered Items": "Mix Fruit Raisins",
+            "Status": "Shipped",
             "Delivery Postcode": "110001",
             "Payment Mode": "Prepaid",
             "Courier": {
@@ -37,7 +55,7 @@ function trackOrder() {
                 "Delivered": "21 Feb 2025, 09:00 AM"
             }
         },
-        "BB003": {
+        "BB004": {
             "Customer Name": "Priya Shah",
             "Ordered Items": "Mix Fruit Raisins",
             "Status": "Delivered",
@@ -70,6 +88,9 @@ function trackOrder() {
     errorMessage.style.display = "none";
 
     let data = sampleData[orderId];
+
+     // Update URL with the Order ID
+     window.history.pushState({}, '', `?orderid=${orderId}`);
 
     // Show order details section & hide input section
     document.getElementById("orderInfo").style.display = "block";
@@ -144,6 +165,17 @@ function trackOrder() {
             }
         }, index * 700);
     });
-
-
 }
+
+
+function loadFromURL() {
+    let params = new URLSearchParams(window.location.search);
+    let orderId = params.get("orderid");
+    if (orderId) {
+        document.getElementById("order_id").value = orderId;
+        trackOrder();
+    }
+}
+
+// Check URL on page load
+window.onload = loadFromURL;
