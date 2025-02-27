@@ -123,9 +123,7 @@ function trackOrder() {
     let statusStages = ["Ordered", "Prepared", "Shipped", "Delivered"];
     statusStages.forEach((stage, index) => {
 
-        if (data["Status"] === "Delivered") {
-            dateElement.innerText = data["Dates"][stage]; // Show actual delivery date
-        } else {
+        if (data["Status"] != "Delivered") {
             // document.getElementById("estimatedDelivery").style.display = "block";
             document.getElementById("estimatedDeliveryDate").innerText = ` ${data["Dates"]["Delivered"]}`;
         }
@@ -138,7 +136,9 @@ function trackOrder() {
             if (element && dateElement && iconElement) {
                 element.classList.add("smooth-fade-in");
 
-
+                if (data["Status"] === "Delivered") {
+                    dateElement.innerText = data["Dates"][stage]; // Show actual delivery date
+                }
 
                 setTimeout(() => {
                     if (statusStages.indexOf(stage) <= statusStages.indexOf(data["Status"])) {

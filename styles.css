@@ -1,26 +1,7 @@
 /* Background with soft gradient */
 body {
-    /* background: linear-gradient(to right, #84d49c, #78d5a7); */
-    /* background: linear-gradient(to right, #84d49c, #9ae9c2); */
     background-color: #9ae9c2;
-    color: #78513b;
     font-family: 'Poppins', sans-serif;
-    /* background-size: 400% 400%; */
-    /* animation: gradientAnimation 5s ease infinite; */
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
 }
 
 /* Order container */
@@ -145,7 +126,7 @@ button:hover {
     align-items: baseline;
 }
 
-#estimatedDelivery{
+#estimatedDelivery {
     display: none;
 }
 
